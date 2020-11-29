@@ -15,8 +15,8 @@ class HomeScreen extends StatelessWidget {
           FlatButton(
             child: Row (
               children: <Widget> [
-                Text ('Login  '),
-                Icon (Icons.person)
+                Text ('Sair  '),
+                Icon (Icons.logout)
               ],
             ),
             padding: EdgeInsets.fromLTRB(0,0,25,0),
@@ -27,13 +27,25 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Center (
-        child: Text(
-          'Bem vindo doador', style: TextStyle (
-          fontWeight: FontWeight.bold,
-          fontSize: 20,
-        ),
-        ),
+      body: Row (
+        children: <Widget>[
+          Container (
+            child: Expanded(
+              child: Container(
+                height: 50,
+                color: Colors.blue,
+              ),
+            ),
+          ),
+          Container (
+            child: Expanded(
+              child: Container(
+                height: 50,
+                color: Colors.red,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

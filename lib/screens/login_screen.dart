@@ -112,7 +112,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Container (
-
                 width: 300,
                 padding: EdgeInsets.all(16),
                 child: Form(
@@ -120,7 +119,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: SingleChildScrollView(
                     child: Column(
                       children: <Widget>[
-
                         TextFormField(
                           decoration: InputDecoration(labelText: 'Email'),
                           keyboardType: TextInputType.emailAddress,

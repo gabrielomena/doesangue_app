@@ -112,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Container (
-                height: 260,
+
                 width: 300,
                 padding: EdgeInsets.all(16),
                 child: Form(

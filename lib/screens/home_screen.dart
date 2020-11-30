@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import 'login_screen.dart';
 
-
 class HomeScreen extends StatelessWidget {
   static const routeName = '/home';
 
@@ -167,14 +166,90 @@ class HomeScreen extends StatelessWidget {
                 height: 205,
                 child: GridView.count(
                   scrollDirection: Axis.horizontal,
-                  crossAxisCount: 2 ,
-                  children: List.generate(opcoes.length,(index){
+                  crossAxisCount: 2,
+                  children: List.generate(opcoes.length, (index) {
                     return Container(
                       child: OpcaoCard(opcao: opcoes[index]),
-                      );
+                    );
                   }),
                 ),
-              )
+              ),
+              Container(
+                width: 350,
+                height: 90,
+                padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                child: FlatButton(
+                  onPressed: () {},
+                  color: Colors.red[500],
+                  child: Row(
+                    children: [
+                      Icon(Icons.calendar_today_sharp, color: Colors.white),
+                      Column(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.fromLTRB(20, 15, 0, 0),
+                            child: Text(
+                              'Agendar Doação',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontSize: 18),
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                            child: Text(
+                              'Agende sua doação      ',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.normal,
+                                  color: Colors.white,
+                                  fontSize: 13),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                width: 350,
+                height: 90,
+                padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                child: FlatButton(
+                  onPressed: () {},
+                  color: Colors.red[500],
+                  child: Row(
+                    children: [
+                      Icon(Icons.playlist_add_check_rounded, color: Colors.white),
+                      Column(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.fromLTRB(20, 15, 0, 0),
+                            child: Text(
+                              'Meus Agendamentos',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontSize: 18),
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                            child: Text(
+                              'Consulte seus agendamentos',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.normal,
+                                  color: Colors.white,
+                                  fontSize: 13),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ],
@@ -182,11 +257,13 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
 class Opcao {
   const Opcao({this.caminhoimg});
-  final String caminhoimg;
 
+  final String caminhoimg;
 }
+
 const List<Opcao> opcoes = const <Opcao>[
   const Opcao(caminhoimg: "assets/g356.png"),
   const Opcao(caminhoimg: "assets/g726.png"),
@@ -198,19 +275,17 @@ const List<Opcao> opcoes = const <Opcao>[
   const Opcao(caminhoimg: "assets/g940.png"),
 ];
 
-
 class OpcaoCard extends StatelessWidget {
   const OpcaoCard({Key key, this.opcao}) : super(key: key);
   final Opcao opcao;
+
   @override
   Widget build(BuildContext context) {
-
     return Container(
-      padding: EdgeInsets.fromLTRB(0, 5, 0, 5),
+        padding: EdgeInsets.fromLTRB(0, 5, 0, 5),
         color: Colors.white38,
         child: Center(
           child: Image.asset(opcao.caminhoimg),
-        )
-    );
+        ));
   }
 }
